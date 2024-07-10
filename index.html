@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=WindSong:wght@500&display=swap" rel="stylesheet">
-
+</head>
 <style>
 
 p{
@@ -122,18 +122,18 @@ body {
   color: rgba(72,75,50,0.7);
   
 }
-.contenedor-formulario .formulario {
+.contenedor-formulario .form {
   width: 90%;
   margin: auto;
 }
 
-.contenedor-formulario .formulario .input-group {
+.contenedor-formulario .form .input-group {
   position: relative;
   margin-bottom: 32px;
 }
-.contenedor-formulario .formulario .input-group input[type="text"],
-.contenedor-formulario .formulario .input-group input[type="email"],
-.contenedor-formulario .formulario .input-group input[type="text2"] {
+.contenedor-formulario .form .input-group input[type="text"],
+.contenedor-formulario .form .input-group input[type="email"],
+.contenedor-formulario .form .input-group input[type="text2"] {
   
   font-size: 100%;
   color: #484B32;
@@ -145,26 +145,26 @@ body {
   border-bottom: 2px solid rgba(72,75,50,0.3);
   transition: all 0.1s ease;
 }
-.contenedor-formulario .formulario .input-group input[type="text"]:focus,
-.contenedor-formulario .formulario .input-group input[type="text"]:active,
-.contenedor-formulario .formulario .input-group input[type="email"]:focus,
-.contenedor-formulario .formulario .input-group input[type="email"]:active,
-.contenedor-formulario .formulario .input-group input[type="text2"]:focus,
-.contenedor-formulario .formulario .input-group input[type="text2"]:active{
+.contenedor-formulario .form .input-group input[type="text"]:focus,
+.contenedor-formulario .form .input-group input[type="text"]:active,
+.contenedor-formulario .form .input-group input[type="email"]:focus,
+.contenedor-formulario .form .input-group input[type="email"]:active,
+.contenedor-formulario .form .input-group input[type="text2"]:focus,
+.contenedor-formulario .form .input-group input[type="text2"]:active{
   outline: none;
   border-bottom: 2px solid #484B32;
 }
-.contenedor-formulario .formulario .input-group input[type="text"].error,
-.contenedor-formulario .formulario .input-group input[type="email"].error,
-.contenedor-formulario .formulario .input-group input[type="text2"].error{
+.contenedor-formulario .form .input-group input[type="text"].error,
+.contenedor-formulario .form .input-group input[type="email"].error,
+.contenedor-formulario .form .input-group input[type="text2"].error{
   border-bottom: 2px solid #D32F2F;
 }
-.contenedor-formulario .formulario .input-group input[type="text"].error + label,
-.contenedor-formulario .formulario .input-group input[type="email"].error + label,
-.contenedor-formulario .formulario .input-group input[type="text2"].error{
+.contenedor-formulario .form .input-group input[type="text"].error + label,
+.contenedor-formulario .form .input-group input[type="email"].error + label,
+.contenedor-formulario .form .input-group input[type="text2"].error{
   color: #D32F2F;
 }
-.contenedor-formulario .formulario .input-group label.label{
+.contenedor-formulario .form .input-group label.label{
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   margin-left: 5%;
@@ -175,14 +175,14 @@ body {
   left: 0;
 }
 
-.contenedor-formulario .formulario .input-group label.label.active {
+.contenedor-formulario .form .input-group label.label.active {
   top: -20%;
   font-size: 20%;
   line-height:20%;
   color: rgba(72,75,50,0.1);
   -webkit-transition: all 0.3s ease;
 }
-.contenedor-formulario .formulario .input-group.radio label {
+.contenedor-formulario .form .input-group.radio label {
   display: inline-block;
   cursor: pointer;
   color: rgba(72,75,50,0.7);
@@ -193,10 +193,10 @@ body {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-.contenedor-formulario .formulario .input-group.radio label:hover {
+.contenedor-formulario .form .input-group.radio label:hover {
   background: rgba(72,75,50,0.3);
 }
-.contenedor-formulario .formulario .input-group.radio label:before {
+.contenedor-formulario .form .input-group.radio label:before {
   content: "";
   display: inline-block;
   width: 17px;
@@ -208,29 +208,29 @@ body {
   background: none;
   border: 2px solid #484B32;
 }
-.contenedor-formulario .formulario .input-group.error label{
+.contenedor-formulario .form .input-group.error label{
   color: #D32F2F;
   
 }
-.contenedor-formulario .formulario .input-group.error label:before {
+.contenedor-formulario .form .input-group.error label:before {
   border: 2px solid #D32F2F;
 }
-.contenedor-formulario .formulario .input-group.error label:hover {
+.contenedor-formulario .form .input-group.error label:hover {
   background: rgba(72,75,50, 0.2);
 }
-.contenedor-formulario .formulario .input-group.radio input[type="radio"] {
+.contenedor-formulario .form .input-group.radio input[type="radio"] {
   display: none;
 }
-.contenedor-formulario .formulario .input-group.radio input[type="radio"]:checked + label:before {
+.contenedor-formulario .form .input-group.radio input[type="radio"]:checked + label:before {
   display: none;
 }
-.contenedor-formulario .formulario .input-group.radio input[type="radio"]:checked + label {
+.contenedor-formulario .form .input-group.radio input[type="radio"]:checked + label {
   padding: 5px 15px;
   background: #484B32;
   border-radius: 2px;
   color: #ffffff;
 }
-.contenedor-formulario .formulario input[type="submit"] {
+.contenedor-formulario .form input[type="submit"] {
   background: rgba(72,75,50,1);
   border: none;
   color: #ffffff;
@@ -243,7 +243,7 @@ body {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-.contenedor-formulario .formulario input[type="submit"]:hover {
+.contenedor-formulario .form input[type="submit"]:hover {
   background: #484B32;
 }
 
@@ -355,13 +355,10 @@ body {
 }())
 </script> -->
 
-<script>
 
-	
-	
-</script>
 
-</head>
+
+
 
 <body style="background-color:#FFFFFF" leftmargin="0" topmargin="0">
 
@@ -620,20 +617,20 @@ body {
 		
   	<div class="contenedor-formulario">
     <div class="wrap">
-        <form action="https://formspree.io/f/xyzgzgze" class="formulario" name="formulario_registro" method="post">
+        <form action="https://formspree.io/f/xyzgzgze" class="form" name="form" method="POST" id="form" >
         <div>
             <div class="input-group">
                 <input type="text" id="nombre" name="nombre"/>
-                <label class="label" for="nombre"N>Tú nombre</label>
+                <label class="label" for="nombre">Tú nombre</label>
             </div>
 
 		<div class="input-group radio">
 			<b>¿Asistirás?</b> <br><br>
 
-                <input type="radio" name="Asistira" id="hombre"/>
-                <label class="label" for="hombre">Sí 😁</label>
-                <input type="radio" name="Asistira" id="mujer"/>
-                <label class="label" for="mujer">No 😔</label>
+                <input type="radio" name="si Asistira" id="si"/>
+                <label class="label" for="si">Sí 😁</label>
+                <input type="radio" name="no Asistira" id="no"/>
+                <label class="label" for="no">No 😔</label>
             </div>
 
             <div class="input-group">
@@ -642,9 +639,7 @@ body {
             </div>
 
             
-
-
-            <input type="submit" name="btn-submit" value="Enviar"/>
+            <input type="submit" name="btn-submit" id="submit" value="Enviar"/>
 
         </div>
     </form>
@@ -680,6 +675,38 @@ body {
       </tr>
 
 </table>
+
+<script>
+const $form = document.querySelector('#form')
+
+$form.addEventListener('submit', handleSubmit)
+
+async function handleSubmit(event) {
+	event.preventDefault()
+	const form = new FormData(this)
+	const response = await fetch (this.action, {
+		method: this.method,
+		body: form,
+		headers: {
+			'Accept': 'application/json'
+		}
+	})
+	if (response.ok) {
+		this.reset()
+		alert('¡Gracias por su respuesta! :D')
+	}
+}
+	
+	
+
+
+
+
+
+
+
+
+</script>
 
 </body>
 
