@@ -102,9 +102,155 @@ body {
 
 }
 
-main{
-	
+
+
+
+
+
+
+
+
+
+.wrap {
+  width: 100%;
+  max-width: 100%;
+  
+  margin: auto;
 }
+.contenedor-formulario {
+  width: 90%;
+  color: rgba(72,75,50,0.7);
+  
+}
+.contenedor-formulario .formulario {
+  width: 90%;
+  margin: auto;
+}
+
+.contenedor-formulario .formulario .input-group {
+  position: relative;
+  margin-bottom: 32px;
+}
+.contenedor-formulario .formulario .input-group input[type="text"],
+.contenedor-formulario .formulario .input-group input[type="email"],
+.contenedor-formulario .formulario .input-group input[type="text2"] {
+  
+  font-size: 100%;
+  color: #484B32;
+  width: 90%;
+  outline: none;
+  padding: 15px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid rgba(72,75,50,0.3);
+  transition: all 0.1s ease;
+}
+.contenedor-formulario .formulario .input-group input[type="text"]:focus,
+.contenedor-formulario .formulario .input-group input[type="text"]:active,
+.contenedor-formulario .formulario .input-group input[type="email"]:focus,
+.contenedor-formulario .formulario .input-group input[type="email"]:active,
+.contenedor-formulario .formulario .input-group input[type="text2"]:focus,
+.contenedor-formulario .formulario .input-group input[type="text2"]:active{
+  outline: none;
+  border-bottom: 2px solid #484B32;
+}
+.contenedor-formulario .formulario .input-group input[type="text"].error,
+.contenedor-formulario .formulario .input-group input[type="email"].error,
+.contenedor-formulario .formulario .input-group input[type="text2"].error{
+  border-bottom: 2px solid #D32F2F;
+}
+.contenedor-formulario .formulario .input-group input[type="text"].error + label,
+.contenedor-formulario .formulario .input-group input[type="email"].error + label,
+.contenedor-formulario .formulario .input-group input[type="text2"].error{
+  color: #D32F2F;
+}
+.contenedor-formulario .formulario .input-group label.label{
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  margin-left: 5%;
+  font-size: 100%;
+  line-height: 16px;
+  position: absolute;
+  top: -10px;
+  left: 0;
+}
+
+.contenedor-formulario .formulario .input-group label.label.active {
+  top: -20%;
+  font-size: 20%;
+  line-height:20%;
+  color: rgba(72,75,50,0.1);
+  -webkit-transition: all 0.3s ease;
+}
+.contenedor-formulario .formulario .input-group.radio label {
+  display: inline-block;
+  cursor: pointer;
+  color: rgba(72,75,50,0.7);
+  position: relative;
+  padding: 5px 15px 5px 51px;
+  font-size: 1em;
+  border-radius: 3px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.contenedor-formulario .formulario .input-group.radio label:hover {
+  background: rgba(72,75,50,0.3);
+}
+.contenedor-formulario .formulario .input-group.radio label:before {
+  content: "";
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  left: 15px;
+  top: 2px;
+  border-radius: 50%;
+  background: none;
+  border: 2px solid #484B32;
+}
+.contenedor-formulario .formulario .input-group.error label{
+  color: #D32F2F;
+  
+}
+.contenedor-formulario .formulario .input-group.error label:before {
+  border: 2px solid #D32F2F;
+}
+.contenedor-formulario .formulario .input-group.error label:hover {
+  background: rgba(72,75,50, 0.2);
+}
+.contenedor-formulario .formulario .input-group.radio input[type="radio"] {
+  display: none;
+}
+.contenedor-formulario .formulario .input-group.radio input[type="radio"]:checked + label:before {
+  display: none;
+}
+.contenedor-formulario .formulario .input-group.radio input[type="radio"]:checked + label {
+  padding: 5px 15px;
+  background: #484B32;
+  border-radius: 2px;
+  color: #ffffff;
+}
+.contenedor-formulario .formulario input[type="submit"] {
+  background: rgba(72,75,50,1);
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Roboto", Arial;
+  font-size: 16px;
+  padding: 15px;
+  width: 100%;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.contenedor-formulario .formulario input[type="submit"]:hover {
+  background: #484B32;
+}
+
+
+
+
+
 
 @media ( max-width: 30em ){ /*30x16px = 480px*/
 
@@ -113,6 +259,108 @@ main{
 
 
 </style>
+
+
+<!-- <script type="text/javascript">
+
+// Recorrer los elementos y hacer que onchange ejecute una funcion para comprobar el valor de ese input
+(function() {
+
+  var formulario = document.formulario_registro,
+    elementos = formulario.elements;
+
+  // Funcion que se ejecuta cuando el evento click es activado
+
+  var validarInputs = function() {
+    for (var i = 0; i < elementos.length; i++) {
+      // Identificamos si el elemento es de tipo texto, email, password, radio o checkbox
+      if (elementos[i].type == "text" || elementos[i].type == "email" || elementos[i].type == "text2") {
+        // Si es tipo texto, email o password vamos a comprobar que esten completados los input
+        if (elementos[i].value.length == 0) {
+          console.log('El campo ' + elementos[i].name + ' esta incompleto');
+          elementos[i].className = elementos[i].className + " error";
+          return false;
+        } else {
+          elementos[i].className = elementos[i].className.replace(" error", "");
+        }
+      }
+    }
+
+    return true;
+  };
+
+  var validarRadios = function() {
+    var opciones = document.getElementsByName('sexo'),
+      resultado = false;
+
+    for (var i = 0; i < elementos.length; i++) {
+      if (elementos[i].type == "radio" && elementos[i].name == "sexo") {
+        // Recorremos los radio button
+        for (var o = 0; o < opciones.length; o++) {
+          if (opciones[o].checked) {
+            resultado = true;
+            break;
+          }
+        }
+
+        if (resultado == false) {
+          elementos[i].parentNode.className = elementos[i].parentNode.className + " error";
+          console.log('El campo sexo esta incompleto');
+          return false;
+        } else {
+          // Eliminamos la clase Error del radio button
+          elementos[i].parentNode.className = elementos[i].parentNode.className.replace(" error", "");
+          return true;
+        }
+      }
+    }
+  };
+
+
+  var enviar = function(e) {
+    if (!validarInputs()) {
+      console.log('Falto validar los Input');
+      e.preventDefault();
+    } else if (!validarRadios()) {
+      console.log('Falto validar los Radio Button');
+      e.preventDefault();
+    } else {
+      console.log('Envia');
+      e.preventDefault();
+    }
+  };
+
+  var focusInput = function() {
+    this.parentElement.children[1].className = "label active";
+    this.parentElement.children[0].className = this.parentElement.children[0].className.replace("error", "");
+  };
+
+  var blurInput = function() {
+    if (this.value <= 0) {
+      this.parentElement.children[1].className = "label";
+      this.parentElement.children[0].className = this.parentElement.children[0].className + " error";
+    }
+  };
+
+  // --- Eventos ---
+  formulario.addEventListener("submit", enviar);
+
+  for (var i = 0; i < elementos.length; i++) {
+    if (elementos[i].type == "text" || elementos[i].type == "email" || elementos[i].type == "text2") {
+      elementos[i].addEventListener("focus", focusInput);
+      elementos[i].addEventListener("blur", blurInput);
+    }
+  }
+
+}())
+</script> -->
+
+<script>
+
+	
+	
+</script>
+
 </head>
 
 <body style="background-color:#FFFFFF" leftmargin="0" topmargin="0">
@@ -362,9 +610,49 @@ main{
       <!-- Formulario -->
 
       <tr>
-      	<td align="center"><br><br><br><br>
+      	<td align="center"><br><br>
 
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSettJVKgSlqSKT0Ns94y4p0B9rpD48d5R4I95eftwfGL9Ubag/viewform?embedded=true" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
+      	
+      	
+      			<p3><b>Asistencia</b></p3><br><br>
+      			
+		   		
+		
+  	<div class="contenedor-formulario">
+    <div class="wrap">
+        <form action="https://formspree.io/f/xyzgzgze" class="formulario" name="formulario_registro" method="post">
+        <div>
+            <div class="input-group">
+                <input type="text" id="nombre" name="nombre"/>
+                <label class="label" for="nombre"N>Tú nombre</label>
+            </div>
+
+		<div class="input-group radio">
+			<b>¿Asistirás?</b> <br><br>
+
+                <input type="radio" name="Asistira" id="hombre"/>
+                <label class="label" for="hombre">Sí 😁</label>
+                <input type="radio" name="Asistira" id="mujer"/>
+                <label class="label" for="mujer">No 😔</label>
+            </div>
+
+            <div class="input-group">
+                <input type="text" id="text2" name="message"/>
+                <label class="label" for="text2">Escribe tu mensaje aquí</label>
+            </div>
+
+            
+
+
+            <input type="submit" name="btn-submit" value="Enviar"/>
+
+        </div>
+    </form>
+    </div>
+
+
+</div>
+
 
 
       	</td>
